@@ -31,7 +31,7 @@ function req(url){
 		request(
 		{
 			method:'GET',
-			header:{'Content-Type' : 'application/json; charset=UTF-8'},
+//			headers:{'Content-Type' : 'application/json; charset=UTF-8'},
 			uri:url
 		},(err,res,body)=>{
 			    if(!err){
