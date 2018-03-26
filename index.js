@@ -15,6 +15,7 @@ if(process.argv[2]=='-k'){
         process.stdin.resume();
         process.stdin.on('keypress',(ch,key)=>{
             if(key && key.ctrl &&key.name=='c'){
+                console.reset();
                 process.stdin.pause();
             }
         })        
