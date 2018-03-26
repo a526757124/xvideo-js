@@ -4,6 +4,7 @@ const chalk = require('chalk');
 console.reset =  function () {
   return process.stdout.write('\033c');
 };
+
 if(process.argv[2]=='-k'){
     if(process.argv[3]!=undefined){
         const keypress = require('keypress')
@@ -40,11 +41,13 @@ process.stdin.resume();
 
 process.stdin.on('keypress',(ch,key)=>{
     if(key &&key.ctrl && key.name=='c'){
+        console.reset();
         process.stdin.pause();
     }})
 
 process.stdin.on('keypress',function accept(ch,key){
     if(key.name=='q'){
+        console.reset();
         console.log('okay goodbye');
         process.stdin.pause();
     }

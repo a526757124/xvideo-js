@@ -58,6 +58,7 @@ function choose(index){
                     });*/
                     rl.on('close',function(){
                         if(lis.keywords.keyword==''){
+                            console.reset();
                             console.log('keyword empty');
                             process.exit();
                         }
@@ -66,6 +67,7 @@ function choose(index){
                         process.stdin.resume();
                         process.stdin.on('keypress',(ch,key)=>{
                             if(key && key.ctrl &&key.name=='c'){
+                                console.reset();
                                 process.stdin.pause();
                             }
                         })
